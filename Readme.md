@@ -7,7 +7,7 @@ In the Dockerfile we create the docker image. We base the image on the existing 
 ```
 FROM ghcr.io/dhis2-chap/docker_r_inla:master
 ```
-After this we simply install the necessary R packages, which is just `fable` and `distribuitional`, as the others are already included in the base image.
+After this we simply install the necessary R packages, which is just `fable` and `distribuitional`, as the others are already included in the base image. However, when running the model with only those two packages added to the `docker_r_inla:master` Image we got some warnings for dependencies, which were resovled by adding `feasts` and `urca`. This is an important reason for enabling warnings at the top of your Rscripts.
 
 As mentioned in the tutorial at docker_r_template, it is important to verify that the resulting package is public, which can be verified by running `docker pull ghcr.io/dhis2-chap/docker_for-madagascararima:master`. Note that all the letters now are lowercase, even though the supplied name had upper case letters.
 
