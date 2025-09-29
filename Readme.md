@@ -11,3 +11,4 @@ After this we simply install the necessary R packages, which is just `fable` and
 
 As mentioned in the tutorial at docker_r_template, it is important to verify that the resulting package is public, which can be verified by running `docker pull ghcr.io/dhis2-chap/docker_for-madagascararima:master`.
 
+Note: The package xgboost is added in to dockerfile although it is not needed in the arima model, but rather for a different XGBoost model which uses the same docker image.
